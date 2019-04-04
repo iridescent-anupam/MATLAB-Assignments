@@ -1,0 +1,11 @@
+G=10;
+I=5;
+C=sort(randperm(55,24));
+NX=sort(randperm(90,24));
+GDP=C+G+I+NX;
+P1=polyfit(GDP,C,2)
+P2=polyfit(GDP,NX,2)
+figure;
+plot(polyval(P1,C),C);
+figure;
+plot(polyval(P2,NX),NX);

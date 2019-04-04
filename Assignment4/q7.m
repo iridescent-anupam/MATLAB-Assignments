@@ -1,0 +1,30 @@
+syms f(x);
+f(x)=4*x*x-3*x-4;
+a=0;
+b=2;
+C=(a+b)/2;
+iter_count=0;
+while(abs(double(f(c)))>0.001)
+  iter_count=iter_count+1;
+  if(double(f(c))<0)
+    a=c;
+  else
+    b=c;
+  end
+  c=(a+b)/2;
+end
+c
+iter_count
+iter_count=0;
+c=(a*double(f(b))-b*double(f(a)))/(double(f(b))-double(f(a)));
+while(abs(double(f(c)))>0.001)
+  iter_count=iter_count+1;
+  if(double(f(c))>0)
+    a=c;
+  else
+    b=c;
+  end
+  c=(a*double(f(b))-b*double(f(a)))/(double(f(b))-double(f(a)));
+end
+c
+iter_count
